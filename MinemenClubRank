@@ -1,0 +1,88 @@
+command /rank [<text>] [<offlineplayer>] [<text>]:
+    permission: rank.admin
+    permission message: &cYou need admin or higher to use this command!
+    trigger:
+        if arg 1 is not set:
+            send "&eMinemen Club Rank System Commands"
+            send "&3/rank set &f<player> <rank>"
+            send "&3/rank addperm &f<rank> <perm node>"
+            send "&3/rank removeperm &f<rank> <perm node>"
+            send "&3/rank list"
+            send "&cThis is in BETA"
+        else if arg 1 is "set":
+            if arg 2 is not set:
+                send "&eUsage: &3/rank set &f<player> <rank>"
+                stop
+            else if arg 2 is set:
+            if arg 3 is not set:
+                send "&c&lInvalid Rank"
+            else if arg 3 is "Default":
+                send "&aYour rank was set to &7Default&a." to arg 2
+                send "&aRank set to &7Default"
+                make console execute command "mangadd %arg 2% Default"
+                set {rank.color.%arg 2%} to "&7"
+                set {rank.%arg 2%} to "&7"
+            if arg 3 is "Vip":
+                send "&aYour rank was set to &aVip&a." to arg 2
+                send "&aRank set to &aVip"
+                make console execute command "mangadd %arg 2% Vip"
+                set {rank.color.%arg 1%} to "&a"
+                set {rank.%arg 2%} to "&7[&aVip&7]&a "
+            if arg 3 is "Mvp":
+                send "&aYour rank was set to &9Mvp&a." to arg 2
+                send "&aRank set to &9Mvp"
+                make console execute command "mangadd %arg 2% Mvp"
+                set {rank.color.%arg 1%} to "&9"
+                set {rank.%arg 2%} to "&7[&9Mvp&7]&9 "
+            if arg 3 is "God":
+                send "&aYour rank was set to &dGOD&a." to arg 2
+                send "&aRank set to &dGOD"
+                make console execute command "mangadd %arg 2% GOD"
+                set {rank.color.%arg 1%} to "&d"
+                set {rank.%arg 2%} to "&7[&dGOD&7]&d "
+            if arg 3 is "Overlord":
+                send "&aYour rank was set to &3Overlord&a." to arg 2
+                send "&aRank set to &3Overlord"
+                make console execute command "mangadd %arg 2% Overlord"
+                set {rank.color.%arg 1%} to "&3"
+                set {rank.%arg 2%} to "&7[&3Overlord&7]&3 "
+            if arg 3 is "Trainee":
+                send "&aYour rank was set to &eTrainee&a." to arg 2
+                send "&aRank set to &eTrainee"
+                make console execute command "mangadd %arg 2% Helper"
+                set {rank.color.%arg 1%} to "&e"
+                set {rank.%arg 2%} to "&7[&eTrainee&7]&e "
+            if arg 3 is "Mod" or "Moderator":
+                send "&aYour rank was set to &5Mod&a." to arg 2
+                send "&aRank set to &5Mod"
+                make console execute command "mangadd %arg 2% Moderator"
+                set {rank.color.%arg 1%} to "&5"
+                set {rank.%arg 2%} to "&7[&5Mod&7]&5 "
+            if arg 3 is "Senior-Mod" or "sr.mod" or "Mod+":
+                send "&c&lThis rank is currently broken!"
+            if arg 3 is "Admin":
+                send "&aYour rank was set to &cAdmin&a." to arg 2
+                send "&aRank set to &cAdmin"
+                make console execute command "mangadd %arg 2% Admin"
+                set {rank.color.%arg 1%} to "&c"
+                set {rank.%arg 2%} to "&7[&cAdmin&7]&c "
+            if arg 3 is "Manager":
+		            send "&aYour rank was set to &c&lManager&a." to arg 2
+		            send "&aRank set to &c&lManager"
+		            make console execute command "mangadd %arg 2% Manager"
+                set {rank.color.%arg 1%} to "&c&l"
+                set {rank.%arg 2%} to "&7[&c&lManager&7]&c&l "
+            if arg 3 is "Developer":
+                send "&aYour rank was set to &b&lDeveloper&a." to arg 2
+		            send "&aRank set to &b&lDeveloper"
+		            make console execute command "mangadd %arg 2% Developer"
+            if arg 3 is "Owner":
+		            send "&aYour rank was set to &4Owner&a." to arg 2
+		            send "&aRank set to &4Owner"
+		            make console execute command "mangadd %arg 2% Owner"
+	if arg 1 is "addperm":
+	    send "&eThis feature will be added in version &c1.3"
+	if arg 1 is "delperm":
+	    send "&eThis feature will be added in version &c1.3"
+	if arg 1 is "list":
+	    send "&eThis feature will be added in version &c1.3"
