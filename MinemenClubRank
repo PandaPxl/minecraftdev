@@ -67,19 +67,19 @@ command /rank [<text>] [<offlineplayer>] [<text>]:
                 set {rank.color.%arg 1%} to "&c"
                 set {rank.%arg 2%} to "&7[&cAdmin&7]&c "
             if arg 3 is "Manager":
-		            send "&aYour rank was set to &c&lManager&a." to arg 2
-		            send "&aRank set to &c&lManager"
-		            make console execute command "mangadd %arg 2% Manager"
+		send "&aYour rank was set to &c&lManager&a." to arg 2
+		send "&aRank set to &c&lManager"
+		make console execute command "mangadd %arg 2% Manager"
                 set {rank.color.%arg 1%} to "&c&l"
                 set {rank.%arg 2%} to "&7[&c&lManager&7]&c&l "
             if arg 3 is "Developer":
                 send "&aYour rank was set to &b&lDeveloper&a." to arg 2
-		            send "&aRank set to &b&lDeveloper"
-		            make console execute command "mangadd %arg 2% Developer"
+		send "&aRank set to &b&lDeveloper"
+		make console execute command "mangadd %arg 2% Developer"
             if arg 3 is "Owner":
-		            send "&aYour rank was set to &4Owner&a." to arg 2
-		            send "&aRank set to &4Owner"
-		            make console execute command "mangadd %arg 2% Owner"
+		send "&aYour rank was set to &4Owner&a." to arg 2
+		send "&aRank set to &4Owner"
+		make console execute command "mangadd %arg 2% Owner"
 	if arg 1 is "addperm":
 	    send "&eThis feature will be added in version &c1.3"
 	if arg 1 is "delperm":
